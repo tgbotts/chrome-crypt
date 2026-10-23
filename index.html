@@ -69,7 +69,7 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
     <div class="tag">★ ОФИЦИАЛЬНЫЙ ПОРТАЛ ★</div>
     <h1 class="chrome"><span>СКИБИДИ</span><span>САУНД</span></h1>
     <div class="cd" aria-hidden="true"></div>
-    <p class="sub">Telegram-бот со звуком нового века и канал <b>«Хромовый склеп»</b>, где всё блестит, как диск из 2000-х.</p>
+    <p class="sub">Бот, который находит музыку из Яндекса, показывает курсы валют и погоду. И канал <b>«Хромовый склеп»</b> с мемами и треками.</p>
     <div class="btns">
       <button class="btn" data-go="bot">ЗАПУСТИТЬ БОТА ▶</button>
       <button class="btn" data-go="chan">КАНАЛ ✦</button>
@@ -81,8 +81,8 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
       <div class="bar"><span>skibidi_sound.exe</span><i><b>_</b><b>□</b><b>×</b></i></div>
       <div class="body">
         <h2>Скибиди Саунд</h2>
-        <p>Бот, который живёт прямо в Telegram. Открыл чат, нажал /start и поймал волну.</p>
-        <ul><li>работает без установки</li><li>открывается и как мини-апп</li><li>новости обновлений в канале</li></ul>
+        <p>Бот находит музыку из Яндекса по ссылке или названию. Заодно покажет курс валют, крипты и погоду.</p>
+        <ul><li>трек из Яндекса по ссылке или названию</li><li>курсы валют и крипты</li><li>погода в пару слов</li></ul>
         <button class="btn" data-go="bot">ОТКРЫТЬ БОТА</button>
       </div>
     </article>
@@ -90,8 +90,8 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
       <div class="bar"><span>hromovyj_sklep.dat</span><i><b>_</b><b>□</b><b>×</b></i></div>
       <div class="body">
         <h2>Хромовый Склеп</h2>
-        <p>Канал, где хром, звук и интернет-эстетика нулевых лежат в одном склепе. Заходи, пока не закрыли.</p>
-        <ul><li>анонсы и апдейты бота первыми</li><li>y2k-вайб каждый день</li><li>чёрно-белый хром без компромиссов</li></ul>
+        <p>Телеграм-канал автора, где он щитпостит мемы и иногда выкладывает треки.</p>
+        <ul><li>щитпост и мемы</li><li>иногда авторские треки</li><li>свой генг, заходи</li></ul>
         <button class="btn" data-go="chan">ПОДПИСАТЬСЯ</button>
       </div>
     </article>
@@ -102,18 +102,18 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
     <div class="st">
       <div class="s"><em>01</em><span>Подпишись на «Хромовый склеп»</span></div>
       <div class="s"><em>02</em><span>Запусти бота Скибиди Саунд</span></div>
-      <div class="s"><em>03</em><span>Жми /start и лови хром</span></div>
+      <div class="s"><em>03</em><span>Кинь ссылку или название трека и забирай музыку</span></div>
     </div>
   </section>
 </main>
 <footer>© 2000+ ХРОМОВЫЙ СКЛЕП ✦ СКИБИДИ САУНД ✦ ВСЕ ПРАВА БЛЕСТЯТ</footer>
 <script>
 (function(){
-  var BOT_URL = "https://t.me/";      // впиши ссылку на бота, например https://t.me/твой_бот
-  var CHANNEL_URL = "https://t.me/";  // впиши ссылку на канал, например https://t.me/твой_канал
+  var BOT_URL = "https://t.me/Skibidi_sound_bot";
+  var CHANNEL_URL = "https://t.me/shkibidi_gang";
   var tg = window.Telegram && window.Telegram.WebApp;
   if (tg) { try { tg.ready(); tg.expand(); } catch(e){} }
-  var line = "✦ СКИБИДИ САУНД ✦ ХРОМОВЫЙ СКЛЕП ✦ ЧЁРНО-БЕЛЫЙ ХРОМ ✦ Y2K ✦ ЗВУК ✦ ";
+  var line = "✦ СКИБИДИ САУНД ✦ ХРОМОВЫЙ СКЛЕП ✦ МУЗЫКА ✦ КУРСЫ ✦ ПОГОДА ✦ МЕМЫ ✦ ТРЕКИ ✦ ";
   document.getElementById("mq").textContent = line.repeat(8);
   for (var i=0;i<16;i++){
     var s = document.createElement("div"); s.className = "star"; s.textContent = i%2 ? "✦" : "✧";
