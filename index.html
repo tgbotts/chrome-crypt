@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Скибиди Саунд × Хромовый Склеп</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--text:#f2f2f2;--silver:#c8c8c8;--ink:#0a0a0a;color-scheme:dark;
+--chrome:linear-gradient(180deg,#fff 0%,#fff 36%,#4a4a4a 49%,#d9d9d9 52%,#fff 68%,#6e6e6e 100%);
+--btn:linear-gradient(180deg,#fff 0%,#e4e4e4 45%,#8c8c8c 50%,#d6d6d6 100%);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#000}
+*{box-sizing:border-box}
+body{margin:0;background:#000 repeating-conic-gradient(#0d0d0d 0 25%,#000 0 50%) 0 0/44px 44px;color:var(--text);font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;overflow-x:hidden;min-height:100vh}
+.disp{font-family:Unbounded,"Arial Black",Impact,sans-serif}
+.chrome{font-family:Unbounded,"Arial Black",Impact,sans-serif;font-weight:900;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px #000;filter:drop-shadow(0 3px 0 #000) drop-shadow(0 0 14px rgba(255,255,255,.35));animation:glow 3.2s ease-in-out infinite alternate;line-height:1}
+@keyframes glow{to{filter:drop-shadow(0 3px 0 #000) drop-shadow(0 0 28px rgba(255,255,255,.7))}}
+.star{position:fixed;color:#fff;pointer-events:none;animation:tw 2.4s ease-in-out infinite;z-index:0}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(45deg)}}
+.marq{overflow:hidden;white-space:nowrap;background:var(--btn);color:#000;border-block:2px solid #000;font-family:Unbounded,Impact,sans-serif;font-weight:900;font-size:13px;padding:7px 0;position:relative;z-index:2}
+.marq div{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:30px 16px 20px}
+.hero{text-align:center;padding:10px 0 26px}
+.tag{display:inline-block;border:1px solid #fff;padding:4px 10px;font-size:12px;letter-spacing:.25em;margin-bottom:18px}
+h1{margin:0;font-size:clamp(40px,12.5vw,92px);letter-spacing:-.02em}
+h1 span{display:block}
+.sub{margin:18px auto 0;max-width:460px;color:var(--silver);font-size:15px;line-height:1.55}
+.cd{width:min(52vw,210px);aspect-ratio:1;border-radius:50%;margin:26px auto 4px;position:relative;border:3px solid #000;box-shadow:0 0 0 2px #fff,0 0 40px rgba(255,255,255,.4);
+background:conic-gradient(#fff,#777,#eee,#444,#fff,#999,#222,#ddd,#fff);animation:spin 7s linear infinite}
+.cd::before{content:"";position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle,#000 0 22%,#ddd 24% 60%,#555 62%);border:2px solid #000}
+.cd::after{content:"";position:absolute;inset:44%;border-radius:50%;background:#000;border:2px solid #fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btn{font-family:Unbounded,"Arial Black",sans-serif;font-weight:900;font-size:14px;color:#000;background:var(--btn);border:2px solid #000;border-radius:999px;padding:14px 24px;cursor:pointer;box-shadow:0 0 0 2px #fff,0 5px 0 #555;text-decoration:none;transition:transform .1s}
+.btn:hover{filter:invert(1)}
+.btn:active{transform:translateY(4px);box-shadow:0 0 0 2px #fff,0 1px 0 #555}
+.grid{display:grid;gap:22px;margin-top:14px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.win{background:#cfcfcf;color:#000;border:2px solid;border-color:#fff #444 #444 #fff;box-shadow:6px 6px 0 #fff3,0 0 0 1px #000}
+.bar{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#000,#5a5a5a 60%,#bbb);color:#fff;font-size:12px;padding:5px 7px;font-weight:600}
+.bar i{font-style:normal;display:flex;gap:4px}
+.bar b{width:15px;height:15px;background:#cfcfcf;border:1px solid;border-color:#fff #444 #444 #fff;color:#000;font-size:10px;display:grid;place-items:center}
+.body{padding:16px 16px 18px}
+.body h2{font-family:Unbounded,"Arial Black",sans-serif;font-weight:900;font-size:22px;margin:0 0 10px;line-height:1.1}
+.body p{margin:0 0 12px;font-size:14px;line-height:1.5}
+.body ul{margin:0 0 14px;padding:0;list-style:none;font-size:13px}
+.body li{padding:6px 8px;border-bottom:1px dotted #555}
+.body li::before{content:"✦ ";}
+.body .btn{display:inline-block;font-size:12px;padding:11px 18px;background:#000;color:#fff;box-shadow:0 0 0 2px #000,0 4px 0 #555}
+.steps{margin-top:34px;text-align:center}
+.steps h3{font-size:clamp(26px,7vw,40px);margin:0 0 18px}
+.st{display:grid;gap:12px}
+@media(min-width:700px){.st{grid-template-columns:repeat(3,1fr)}}
+.s{border:2px solid #fff;padding:16px 10px;background:#000;position:relative}
+.s em{font-family:Unbounded,sans-serif;font-style:normal;font-weight:900;font-size:34px;display:block;color:#fff;text-shadow:0 0 12px #fff}
+.s span{font-size:13px;color:var(--silver)}
+footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font-size:12px;color:#8a8a8a;letter-spacing:.15em}
+@media (prefers-reduced-motion:reduce){.cd,.star,.marq div,.chrome{animation:none}}
+</style>
+</head>
+<body>
+<div class="marq"><div id="mq"></div></div>
+<main>
+  <section class="hero">
+    <div class="tag">★ ОФИЦИАЛЬНЫЙ ПОРТАЛ ★</div>
+    <h1 class="chrome"><span>СКИБИДИ</span><span>САУНД</span></h1>
+    <div class="cd" aria-hidden="true"></div>
+    <p class="sub">Telegram-бот со звуком нового века и канал <b>«Хромовый склеп»</b>, где всё блестит, как диск из 2000-х.</p>
+    <div class="btns">
+      <button class="btn" data-go="bot">ЗАПУСТИТЬ БОТА ▶</button>
+      <button class="btn" data-go="chan">КАНАЛ ✦</button>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="win">
+      <div class="bar"><span>skibidi_sound.exe</span><i><b>_</b><b>□</b><b>×</b></i></div>
+      <div class="body">
+        <h2>Скибиди Саунд</h2>
+        <p>Бот, который живёт прямо в Telegram. Открыл чат, нажал /start и поймал волну.</p>
+        <ul><li>работает без установки</li><li>открывается и как мини-апп</li><li>новости обновлений в канале</li></ul>
+        <button class="btn" data-go="bot">ОТКРЫТЬ БОТА</button>
+      </div>
+    </article>
+    <article class="win">
+      <div class="bar"><span>hromovyj_sklep.dat</span><i><b>_</b><b>□</b><b>×</b></i></div>
+      <div class="body">
+        <h2>Хромовый Склеп</h2>
+        <p>Канал, где хром, звук и интернет-эстетика нулевых лежат в одном склепе. Заходи, пока не закрыли.</p>
+        <ul><li>анонсы и апдейты бота первыми</li><li>y2k-вайб каждый день</li><li>чёрно-белый хром без компромиссов</li></ul>
+        <button class="btn" data-go="chan">ПОДПИСАТЬСЯ</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="steps">
+    <h3 class="chrome">КАК ВОЙТИ</h3>
+    <div class="st">
+      <div class="s"><em>01</em><span>Подпишись на «Хромовый склеп»</span></div>
+      <div class="s"><em>02</em><span>Запусти бота Скибиди Саунд</span></div>
+      <div class="s"><em>03</em><span>Жми /start и лови хром</span></div>
+    </div>
+  </section>
+</main>
+<footer>© 2000+ ХРОМОВЫЙ СКЛЕП ✦ СКИБИДИ САУНД ✦ ВСЕ ПРАВА БЛЕСТЯТ</footer>
+<script>
+(function(){
+  var BOT_URL = "https://t.me/";      // впиши ссылку на бота, например https://t.me/твой_бот
+  var CHANNEL_URL = "https://t.me/";  // впиши ссылку на канал, например https://t.me/твой_канал
+  var tg = window.Telegram && window.Telegram.WebApp;
+  if (tg) { try { tg.ready(); tg.expand(); } catch(e){} }
+  var line = "✦ СКИБИДИ САУНД ✦ ХРОМОВЫЙ СКЛЕП ✦ ЧЁРНО-БЕЛЫЙ ХРОМ ✦ Y2K ✦ ЗВУК ✦ ";
+  document.getElementById("mq").textContent = line.repeat(8);
+  for (var i=0;i<16;i++){
+    var s = document.createElement("div"); s.className = "star"; s.textContent = i%2 ? "✦" : "✧";
+    s.style.left = Math.random()*96 + "vw"; s.style.top = Math.random()*96 + "vh";
+    s.style.fontSize = (10 + Math.random()*20) + "px"; s.style.animationDelay = (Math.random()*2.4) + "s";
+    document.body.appendChild(s);
+  }
+  document.querySelectorAll("[data-go]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var url = b.dataset.go === "bot" ? BOT_URL : CHANNEL_URL;
+      try { if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank"); } catch(e){}
+    });
+  });
+})();
+</script>
+</body>
+</html>
