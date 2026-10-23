@@ -59,6 +59,8 @@ background:conic-gradient(#fff,#777,#eee,#444,#fff,#999,#222,#ddd,#fff);animatio
 .s em{font-family:Unbounded,sans-serif;font-style:normal;font-weight:900;font-size:34px;display:block;color:#fff;text-shadow:0 0 12px #fff}
 .s span{font-size:13px;color:var(--silver)}
 footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font-size:12px;color:#8a8a8a;letter-spacing:.15em}
+.tiny{display:block;margin:14px auto 0;background:none;border:0;color:#fff;opacity:.22;font:inherit;font-size:11px;letter-spacing:.12em;cursor:pointer;padding:6px 10px;transition:opacity .3s}
+.tiny:hover{opacity:.9}
 @media (prefers-reduced-motion:reduce){.cd,.star,.marq div,.chrome{animation:none}}
 </style>
 </head>
@@ -91,7 +93,7 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
       <div class="body">
         <h2>Хромовый Склеп</h2>
         <p>Телеграм-канал автора, где он щитпостит мемы и иногда выкладывает треки.</p>
-        <ul><li>щитпост и мемы</li><li>иногда авторские треки</li><li>свой генг, заходи</li></ul>
+        <ul><li>щитпост и мемы</li><li>иногда авторские треки</li><li>своя банда, заходи</li></ul>
         <button class="btn" data-go="chan">ПОДПИСАТЬСЯ</button>
       </div>
     </article>
@@ -106,11 +108,12 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
     </div>
   </section>
 </main>
-<footer>© 2000+ ХРОМОВЫЙ СКЛЕП ✦ СКИБИДИ САУНД ✦ ВСЕ ПРАВА БЛЕСТЯТ</footer>
+<footer>© 2000+ ХРОМОВЫЙ СКЛЕП ✦ СКИБИДИ САУНД ✦ ВСЕ ПРАВА БЛЕСТЯТ<button class="tiny" data-go="friend">✧ двор шута · мемы от друга</button></footer>
 <script>
 (function(){
   var BOT_URL = "https://t.me/Skibidi_sound_bot";
   var CHANNEL_URL = "https://t.me/shkibidi_gang";
+  var FRIEND_URL = "https://t.me/dvor_shuta";
   var tg = window.Telegram && window.Telegram.WebApp;
   if (tg) { try { tg.ready(); tg.expand(); } catch(e){} }
   var line = "✦ СКИБИДИ САУНД ✦ ХРОМОВЫЙ СКЛЕП ✦ МУЗЫКА ✦ КУРСЫ ✦ ПОГОДА ✦ МЕМЫ ✦ ТРЕКИ ✦ ";
@@ -123,7 +126,7 @@ footer{position:relative;z-index:1;text-align:center;padding:30px 16px 40px;font
   }
   document.querySelectorAll("[data-go]").forEach(function(b){
     b.addEventListener("click", function(){
-      var url = b.dataset.go === "bot" ? BOT_URL : CHANNEL_URL;
+      var g = b.dataset.go, url = g === "bot" ? BOT_URL : g === "friend" ? FRIEND_URL : CHANNEL_URL;
       try { if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank"); } catch(e){}
     });
   });
